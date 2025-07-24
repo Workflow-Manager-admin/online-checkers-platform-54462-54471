@@ -1,0 +1,34 @@
+/* Theme/principal background and flex container */
+.checkers-main-layout {
+  min-height: 100vh;
+  min-width: 100vw;
+  background: linear-gradient(125deg, #fffde7, #fafafa 48%, #3f51b515 100%);
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: stretch;
+  width: 100vw;
+}
+
+/* Main layout container for centering the board and control panel */
+.checkers-container {
+  margin: 2rem auto; 
+  max-width: 1100px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2rem;
+}
+
+@media (max-width: 900px) {
+  .checkers-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.7rem;
+    margin: 1.2rem 0;
+    width: 97vw;
+  }
+}

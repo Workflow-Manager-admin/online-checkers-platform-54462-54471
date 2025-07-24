@@ -1,0 +1,21 @@
+<div class="control-panel">
+  <div class="actions">
+    <button class="main-btn" (click)="newGame()">New Game</button>
+  </div>
+  <div class="game-info">
+    <div>
+      <strong>Status:</strong>
+      <span>{{ gameService.gameStatus }}</span>
+    </div>
+    <div>
+      <strong>Turn:</strong>
+      <span [ngClass]="gameService.currentPlayer === 1 ? 'red' : 'black'">
+        {{ gameService.currentPlayer === 1 ? 'Red' : 'Black' }}
+      </span>
+    </div>
+    <div>
+      <strong>Moves:</strong>
+      <span>{{ gameService.moveLog.join(', ') || '—' }}</span>
+    </div>
+  </div>
+</div>

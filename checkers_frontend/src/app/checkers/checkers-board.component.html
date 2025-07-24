@@ -1,0 +1,31 @@
+<div class="board">
+  <div
+    *ngFor="let row of [].constructor(rows); let rowIndex = index"
+    class="board-row"
+  >
+    <div
+      *ngFor="let col of [].constructor(cols); let colIndex = index"
+      class="board-cell"
+      [ngClass]="[
+        getCellType(rowIndex, colIndex),
+        isCellHighlighted(rowIndex, colIndex) ? 'highlight' : '',
+        isCellSelected(rowIndex, colIndex) ? 'selected' : ''
+      ]"
+      (click)="onCellClick(rowIndex, colIndex)"
+      tabindex="0"
+      [attr.aria-label]="'cell ' + rowIndex + ',' + colIndex"
+    >
+      <ng-container *ngIf="getPieceAt(rowIndex, colIndex) as piece">
+        <div
+          class="piece"
+          [ngClass]="[
+            piece.player === 1 ? 'red' : 'black',
+            piece.king ? 'king' : ''
+          ]"
+        >
+          <span *ngIf="piece.king" class="king-crown">👑</span>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>
