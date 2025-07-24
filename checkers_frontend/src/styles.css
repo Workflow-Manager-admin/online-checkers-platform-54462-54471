@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+html,
+body {
+  background: #181a20;
+  color: #f5f7fa;
+  min-height: 100vh;
+  min-width: 100vw;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background 0.5s;
+}

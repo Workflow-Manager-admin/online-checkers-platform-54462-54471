@@ -5,10 +5,10 @@
   width: 90vw;
   max-width: 480px;
   aspect-ratio: 1/1;
-  box-shadow: 0 8px 32px 0 rgba(44, 54, 61, 0.12);
+  box-shadow: 0 8px 32px 0 rgba(40, 48, 61, 0.22);
   border-radius: 16px;
   overflow: hidden;
-  background: #fff;
+  background: var(--surface-2, #222430);
 }
 
 .board-row {
@@ -24,7 +24,7 @@
   width: 100%;
   cursor: pointer;
   position: relative;
-  transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s, filter 0.2s;
   outline: none;
   border: none;
   display: flex;
@@ -33,46 +33,48 @@
 }
 
 .board-cell.light {
-  background: #fffde7;
+  background: #393c51;
 }
 .board-cell.dark {
-  background: #3f51b5;
+  background: var(--secondary, #3f51b5);
 }
 
 .board-cell.highlight {
-  box-shadow: 0 0 0 4px #ffc107 inset;
+  box-shadow: 0 0 0 4px var(--accent, #ffc107) inset;
   z-index: 1;
+  filter: brightness(1.18);
 }
 .board-cell.selected {
-  box-shadow: 0 0 0 4px #f44336 inset;
+  box-shadow: 0 0 0 4px var(--primary, #f44336) inset;
   z-index: 2;
+  filter: brightness(1.2) saturate(1.2);
 }
 .piece {
   width: 70%;
   height: 70%;
   border-radius: 50%;
-  box-shadow: 0 2px 8px rgba(60, 60, 60, 0.25);
+  box-shadow: 0 2px 8px rgba(20, 20, 40, 0.42);
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 2rem;
 }
 .piece.red {
-  background: #f44336;
-  border: 3px solid #ffe0b2;
+  background: var(--primary, #f44336);
+  border: 3px solid #ffc7b2;
 }
 .piece.black {
-  background: #222;
+  background: #101325;
   border: 3px solid #90caf9;
 }
 .piece.king {
-  border: 3px solid #ffc107;
+  border: 3px solid var(--accent, #ffc107);
   font-weight: bold;
   font-family: var(--font-family, inherit);
 }
 .king-crown {
-  color: #ffc107;
-  text-shadow: 1px 1px 3px #4448;
+  color: var(--accent, #ffc107);
+  text-shadow: 1px 1px 3px #242638b8;
   font-size: 1.3em;
   pointer-events: none;
 }
